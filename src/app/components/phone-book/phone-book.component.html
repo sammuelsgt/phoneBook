@@ -1,0 +1,22 @@
+<p>phone-book works!</p>
+
+<div>
+    <input type="text" [(ngModel)]="newName" placeholder="name">
+    <input type="text" [(ngModel)]="newEmail" placeholder="email">
+    <input type="text" [(ngModel)]="newPhoneNumber" placeholder="phone number">
+    <button (click)="addContact()">Add Person to Phone Book</button>
+    
+</div>
+
+
+<div *ngFor="let phonebook of phoneBook" >
+    <div *ngIf="phonebook.name !='' "  >
+        <input value="{{phonebook.name}}" [disabled]="phonebook.isEnabled ">
+        <input value="{{phonebook.email}}" [disabled]="phonebook.isEnabled ">
+        <input value="{{phonebook.phoneNumber}}"  [disabled]="phonebook.isEnabled" >
+        <button (click)="editContact(phonebook.id)">Edit</button>
+        {{phonebook.id}}
+        <button (click)="deleteContact(phonebook)">delete</button>
+
+    </div>
+</div>
