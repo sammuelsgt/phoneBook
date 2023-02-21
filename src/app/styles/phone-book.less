@@ -1,0 +1,25 @@
+@text-family:sans-serif;
+@gcolor:#25c75c;
+@bgcolor:#2b2b2b;
+@centercontent:center;
+@div-mh:100vh;
+@displaytype:flex;
+@displayjustify:space-evenly;
+.div-body {
+    font-family: @text-family;
+    background-color: @bgcolor;
+    min-height: @div-mh ;
+    color:@gcolor;
+    text-align: @centercontent; 
+  }
+.table-head{
+    display: @displaytype;
+    justify-content: @displayjustify;
+}  
+table{
+  border: 3px solid;
+  border-collapse: collapse;
+  border-color: @gcolor;
+  padding: 100px;
+  border-radius: 10px;
+}

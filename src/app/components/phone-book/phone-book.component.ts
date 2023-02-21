@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { isEmpty } from 'rxjs';
 import { PhoneBook } from 'src/app/interfaces/phone-book';
 @Component({
   selector: 'app-phone-book',
@@ -9,15 +8,16 @@ import { PhoneBook } from 'src/app/interfaces/phone-book';
 
 
 export class PhoneBookComponent {
-  phoneBook :PhoneBook[] = [
-    {name: '', email:'',phoneNumber:'',id:0, isEnabled:true}
-  ];
+  phoneBook :PhoneBook[] = []
   newName="";
   newPhoneNumber="";
   newEmail="";
   newId=1;
+
+  
   
   addContact(){
+    
     this.phoneBook?.push({
       name:this.newName,
       phoneNumber:this.newPhoneNumber,
@@ -34,16 +34,11 @@ export class PhoneBookComponent {
 
   editContact(id:number){
     
-   this.phoneBook.forEach((person) => {
+   this.phoneBook?.forEach((person) => {
     if(person.id ===id){
     person.isEnabled =!person.isEnabled}
    })
-   console.log(this.phoneBook)
   }
 
-
-    
-    
-    
 
 }
